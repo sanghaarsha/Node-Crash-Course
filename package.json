@@ -1,0 +1,22 @@
+{
+  "name": "using-npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "16-Using-NPM.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanghaarsha/Node-Crash-Course.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sanghaarsha/Node-Crash-Course/issues"
+  },
+  "homepage": "https://github.com/sanghaarsha/Node-Crash-Course#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
