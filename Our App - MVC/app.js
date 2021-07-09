@@ -1,7 +1,6 @@
 const ejs = require("ejs");
 const express = require("express");
 const mongoose = require("mongoose");
-const blogRoutes = require("./routes/blogRoutes");
 const app = express();
 
 app.use(
@@ -50,7 +49,7 @@ app.get("/about", (req, res) => {
 });
 
 // blog routes
-app.use("/blogs", blogRoutes); //scoping to '/blogs' route
+app.use("/blogs", require("./routes/blogRoutes"));
 
 // 404
 app.use((req, res) => {
