@@ -33,22 +33,6 @@ mongoose
     })
     .catch((err) => console.log(err));
 
-// blog sample
-const blogs = [
-    {
-        title: "This is my first blog",
-        snippet: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    },
-    {
-        title: "NodeJS is cool",
-        snippet: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    },
-    {
-        title: "I love express",
-        snippet: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    },
-];
-
 // Middlewares for main routes
 app.get("/", (req, res) => {
     res.redirect("/blogs");
