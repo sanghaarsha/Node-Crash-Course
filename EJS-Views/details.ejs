@@ -18,7 +18,7 @@
             <div class="content">
                 <p><%= blog.body %></p>
             </div>
-            <a class="delete" data-doc="<%= blog.id %>">Delete</a>
+            <a class="delete" data-doc="<%= blog._id %>">Delete</a>
         </div>
 
         <!-- Footer partial -->
@@ -34,9 +34,11 @@
             fetch(endpoint, {
                 method: "DELETE",
             })
-                .then(() => {
-                    
-                })
+                // after DELETE Request is done
+                // we get json with endpoint to redirect to
+                // so, lets implement redirection
+                .then((response) => response.json())
+                .then((data) => (window.location.href = data.redirect))
                 .catch((err) => console.log(err));
         });
     </script>
