@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Head partial -->
+    <%- include('./partials/head.ejs') %>
+</head>
+
+<body>
+    <!-- Nav Partial -->
+    <%- include('./partials/nav.ejs') %>
+
+    <!-- Content -->
+    <div class="details content">
+        <h2><%= blog.title %> </h2>
+        <div class="content">
+            <p><%= blog.body %></p>
+        </div>
+        <a class="delete" data-doc="<%= blog.id %>">Delete</a>
+    </div>
+
+    <!-- Footer partial -->
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>
