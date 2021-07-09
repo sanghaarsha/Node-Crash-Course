@@ -8,7 +8,7 @@
         <%- include('./partials/nav.ejs') %>
 
         <div class="create-blog content">
-            <form>
+            <form action="/blogs" method="POST">
                 <label for="title">Blog Title:</label
                 ><input type="text" id="title" required />
 
@@ -17,7 +17,7 @@
 
                 <label for="body">Blog Body:</label>
                 <textarea id="body" required></textarea>
-                <button>Submit</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
         <!-- Footer partial -->
