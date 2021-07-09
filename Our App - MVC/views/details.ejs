@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Head partial -->
+        <%- include('./partials/head.ejs') %>
+    </head>
+
+    <body>
+        <!-- Nav Partial -->
+        <%- include('./partials/nav.ejs') %>
+
+        <!-- Content -->
+        <div class="details content">
+            <h2><%= blog.title %></h2>
+            <div class="content">
+                <p><%= blog.body %></p>
+            </div>
+            <a class="delete" data-doc="<%= blog._id %>">Delete</a>
+        </div>
+
+        <!-- Footer partial -->
+        <%- include('./partials/footer.ejs') %>
+    </body>
+
+    <script>
+        const trashcan = document.querySelector("a.delete");
+
+        trashcan.addEventListener("click", (e) => {
+            const endpoint = `/blogs/${trashcan.dataset.doc}`;
+
+            fetch(endpoint, {
+                method: "DELETE",
+            })
+                // after DELETE Request is done
+                // we get json with endpoint to redirect to
+                // so, lets implement redirection
+                .then((response) => response.json())
+                .then((data) => (window.location.href = data.redirect))
+                .catch((err) => console.log(err));
+        });
+    </script>
+</html>
